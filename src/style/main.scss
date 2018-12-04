@@ -21,8 +21,46 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-.app {
-    margin-top: 2rem;
+.layout {
+    height: 100vh;
+    width: 100vw;
+
     display: grid;
-    justify-items: center;
+    grid-template-rows: 20px [title-s] 80px [title-e add-s] 120px [add-e todos-s] 1fr [todos-e];
+    grid-template-columns: 140px [s] 1fr [e] 140px;
+
+    & > * {
+        grid-column: s/e;
+    }
+
+    &__title {
+        grid-row: title-s/title-e;
+    }
+    &__add-todo {
+        grid-row: add-s/add-e;
+        background: rgb(255, 202, 213);
+
+        input,
+        button {
+            height: 40px;
+            font-size: 24px;
+        }
+        input {
+            width: 50%;
+            margin-right: 40px;
+        }
+        button { 
+            width: 130px;
+        }
+    }
+
+    &__todos {
+        grid-row: todos-s/todos-e;
+        background: ghostwhite;
+    }
+
+    background: rgb(196, 238, 254);
 }
+
+
+
