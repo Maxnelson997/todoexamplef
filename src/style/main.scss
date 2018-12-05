@@ -26,32 +26,36 @@ body {
     width: 100vw;
 
     display: grid;
-    grid-template-rows: 20px [title-s] 80px [title-e add-s] 120px [add-e todos-s] 1fr [todos-e];
+    grid-template-rows: 20px [title-s] 80px [title-e add-s] 40px [add-e todos-s] 1fr [todos-e];
     grid-template-columns: 140px [s] 1fr [e] 140px;
+
+    grid-gap: 20px;
 
     & > * {
         grid-column: s/e;
     }
 
     &__title {
+        background: gray;
         grid-row: title-s/title-e;
     }
     &__add-todo {
         grid-row: add-s/add-e;
         background: rgb(255, 202, 213);
+        grid-gap: 20px;
 
-        input,
-        button {
-            height: 40px;
-            font-size: 24px;
-        }
-        input {
-            width: 50%;
-            margin-right: 40px;
-        }
-        button { 
-            width: 130px;
-        }
+        // input,
+        // button {
+        //     height: 40px;
+        //     font-size: 24px;
+        // }
+        // input {
+        //     width: 50%;
+        //     margin-right: 40px;
+        // }
+        // button { 
+        //     width: 130px;
+        // }
     }
 
     &__todos {
@@ -63,4 +67,15 @@ body {
 }
 
 
+.add-todo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
 
+    input {
+        grid-column: 1/2;
+    }
+    button {
+        grid-column: 2/3;
+    }
+}
