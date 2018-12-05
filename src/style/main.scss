@@ -84,10 +84,12 @@ body {
 .todos {
     overflow-y: scroll;
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     // grid-template-rows: rep
     // justify-content: center;
     justify-items: center;
+    align-items: center;
     grid-gap: 20px;
     
 }

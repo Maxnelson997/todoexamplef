@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 
-const Todo = () => {
+const Todo = ({title}) => {
     return (
         <div className='todos__todo'>
-            <h5>title</h5>
+            <h5>{title}</h5>
             <button>complete</button>
         </div>
     )
 }
 
 class Todos extends Component {
+
    render() {
-       const { className } = this.props
+       const { className, items } = this.props
        return (
             <div className={`${className} todos`}>
-               <Todo/>
-               <Todo/>
-               <Todo/>
-               <Todo/>
-               <Todo/>
-               <Todo/>
+               {
+                   items.map((item, index) => {
+                       return <Todo key={index} title={item}/>
+                   })
+               }
             </div>
        )
    }
