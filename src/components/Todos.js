@@ -20,6 +20,7 @@ class Todos extends Component {
                        return <Todo key={index} title={item}/>
                    })
                }
+
             </div>
        )
    }

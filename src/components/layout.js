@@ -4,8 +4,7 @@ import Todos from './Todos';
 
 const items = [
   'learnnn',
-  'redux',
-  'state management'
+  'redux'
 ]
 
 class Layout extends Component {
