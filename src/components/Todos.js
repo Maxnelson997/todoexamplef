@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { connect } from 'react-redux';
+
 const Todo = ({title}) => {
     return (
         <div className='todos__todo'>
@@ -25,5 +27,12 @@ class Todos extends Component {
        )
    }
 }
+
+function mapStateToProps(state) {
+    const { items } = state.todos;
+    return { items }
+}
+
+Todos = connect(mapStateToProps)(Todos);
 
 export default Todos;
